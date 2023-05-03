@@ -1,0 +1,295 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 日本語 resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN)
+#ifdef _WIN32
+LANGUAGE LANG_JAPANESE, SUBLANG_DEFAULT
+#pragma code_page(932)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,22,0,0
+ PRODUCTVERSION 1,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041104b0"
+        BEGIN
+            VALUE "FileDescription", "Music Player 'Luna'"
+            VALUE "FileVersion", "1.22"
+            VALUE "LegalCopyright", "Copyright (c) 2009-2023 MAYO."
+            VALUE "OriginalFilename", "Luna.exe"
+            VALUE "ProductName", "Luna"
+            VALUE "ProductVersion", "1.22"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x411, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PLAYER DIALOGEX 0, 0, 361, 250
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_MINIMIZEBOX | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_ACCEPTFILES | WS_EX_APPWINDOW
+CAPTION "Luna"
+MENU IDR_MAINMENU
+FONT 10, "MS UI Gothic", 400, 0, 0x80
+BEGIN
+    CONTROL         "",IDC_VLIST,"SysListView32",LVS_REPORT | LVS_SHOWSELALWAYS | LVS_SHAREIMAGELISTS | LVS_NOLABELWRAP | LVS_AUTOARRANGE | LVS_OWNERDATA | WS_BORDER | WS_TABSTOP,5,66,351,180
+    PUSHBUTTON      "> ||",IDC_PLAY,6,15,28,24
+    PUSHBUTTON      "■",IDC_STOP,39,15,28,24
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDFRAME,73,6,260,43,WS_EX_STATICEDGE
+    CTEXT           "",IDC_MSG1,75,10,256,11,SS_NOPREFIX | SS_ENDELLIPSIS
+    CTEXT           "",IDC_MSG2,75,22,256,11,SS_NOPREFIX | SS_ENDELLIPSIS
+    RTEXT           "--:--",IDC_TIME,77,35,20,10,SS_NOPREFIX | SS_CENTERIMAGE
+    CTEXT           "/",IDC_STATIC,98,35,8,10,SS_CENTERIMAGE
+    LTEXT           "--:--",IDC_LENGTH,106,35,20,10,SS_NOPREFIX | SS_CENTERIMAGE
+    CONTROL         "",IDC_SEEK,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,126,32,204,14
+    CONTROL         "",IDC_VOLUME,"msctls_trackbar32",TBS_VERT | WS_TABSTOP,337,1,16,50
+    LTEXT           "検索",IDC_STATIC,235,53,16,8
+    EDITTEXT        IDC_SEARCH,256,51,100,13,ES_AUTOHSCROLL
+    CONTROL         "",IDC_LEVEL,"msctls_progress32",PBS_SMOOTH | PBS_VERTICAL,326,7,6,41
+END
+
+IDD_CONFIG DIALOGEX 0, 0, 259, 265
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "設定"
+FONT 10, "MS UI Gothic", 400, 0, 0x80
+BEGIN
+    GROUPBOX        "オーディオ出力",IDC_STATIC,6,6,245,78
+    COMBOBOX        IDC_DEVLIST,13,18,230,112,CBS_DROPDOWNLIST | CBS_AUTOHSCROLL | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Core: 24/32bit出力時、ノイズになるデバイスもありますのでご注意ください。",IDC_STATIC,14,34,230,8
+    CONTROL         "リバーブ(&R)",IDC_REVERB,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,18,48,48,10
+    CONTROL         "コンプレッション(&C)",IDC_COMPRESS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,18,60,69,10
+    CONTROL         "ボーカル消し(&V)",IDC_VCCANCEL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,96,48,62,10
+    CONTROL         "ボーカル強調(&B)",IDC_VCBOOST,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,96,60,64,10
+    GROUPBOX        "表示",IDC_STATIC,6,90,245,147
+    CONTROL         "常に手前に表示する(&T)",IDC_TOPMOST,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,18,102,86,10
+    CONTROL         "通知領域にアイコンを表示(&N)",IDC_USETRAY,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,18,114,103,10
+    CONTROL         "ふきだしを表示する(&B)",IDC_BALLOON,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,18,126,81,10
+    CONTROL         "通知領域で操作可能にする(&C)",IDC_TRAYCTRL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,126,102,109,10
+    CONTROL         "最小化時、タスクバーを消す(&H)",IDC_HIDETBAR,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,126,114,105,10
+    GROUPBOX        "歌詞",IDC_STATIC,9,150,239,79
+    CONTROL         "歌詞を表示する(&L)",IDC_SHOWLRC,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,18,162,72,10
+    CONTROL         "歌詞を探す時、サブフォルダも検索する(&S)",IDC_SCANSUB,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,18,174,145,10
+    EDITTEXT        IDC_LRCDIR,17,192,190,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "参照...",IDC_BROWSE,208,190,36,15
+    LTEXT           "演奏ファイルと同じフォルダに歌詞が無いときに検索します。\n拡張子「.lrc」、「.txt」の順で検索します。",IDC_STATIC,18,207,190,18
+    PUSHBUTTON      "OK",IDOK,138,243,50,16
+    PUSHBUTTON      "キャンセル",IDCANCEL,198,243,50,16
+END
+
+IDD_PLUGIN DIALOGEX 0, 0, 321, 210
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "プラグイン"
+FONT 10, "MS UI Gothic", 0, 0, 0x0
+BEGIN
+    CONTROL         "List1",IDC_PLGLIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_NOLABELWRAP | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,8,7,305,171
+    PUSHBUTTON      "プロパティ...",IDC_PLGPROP,30,185,50,16,WS_DISABLED
+    PUSHBUTTON      "OK",IDOK,186,186,50,16
+    PUSHBUTTON      "キャンセル",IDCANCEL,246,186,50,16
+END
+
+IDD_CANCEL DIALOGEX 0, 0, 301, 47
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION
+EXSTYLE WS_EX_TOOLWINDOW | WS_EX_WINDOWEDGE
+CAPTION "検索中・・・"
+FONT 10, "MS UI Gothic", 400, 0, 0x80
+BEGIN
+    PUSHBUTTON      "キャンセル",IDCANCEL,125,25,50,16
+    LTEXT           "",IDC_PATH,6,7,288,13,SS_NOPREFIX | SS_CENTERIMAGE | SS_PATHELLIPSIS,WS_EX_STATICEDGE
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_PLAYER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 358
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 243
+    END
+
+    IDD_CONFIG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 249
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 132
+    END
+
+    IDD_PLUGIN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 314
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 203
+    END
+
+    IDD_CANCEL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 294
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 40
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_APP                 ICON                    "res\\Luna.ico"
+IDI_PLAY                ICON                    "res\\Play.ico"
+IDI_SKIP                ICON                    "res\\Skip.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINMENU MENU 
+BEGIN
+    POPUP "ファイル(&F)"
+    BEGIN
+        MENUITEM "ファイルを開く(&O)...",              IDM_OPENFILE
+        MENUITEM "フォルダを開く(&D)...",              IDM_OPENDIR
+        MENUITEM SEPARATOR
+        MENUITEM "プレイリストを開く(&L)...",            IDM_LOADLIST
+        MENUITEM "プレイリストを名前を付けて保存(&S)...",      IDM_SAVELIST
+        MENUITEM SEPARATOR
+        MENUITEM "プレイリストクリア(&C)",               IDM_CLEARLIST
+        MENUITEM "存在しない項目を削除(&N)",              IDM_REMOVENOTEXISTS
+        MENUITEM SEPARATOR
+        MENUITEM "終了(&X)",                      IDM_EXIT
+    END
+    POPUP "操作(&C)"
+    BEGIN
+        MENUITEM "再生／一時停止(&P)",                 IDM_PLAY
+        MENUITEM "停止(&S)",                      IDM_STOP
+        MENUITEM "前へ(&R)\tCtrl+←",              IDM_PREV
+        MENUITEM "次へ(&F)\tCtrl+→",              IDM_NEXT
+        MENUITEM SEPARATOR
+        MENUITEM "通常再生(&N)",                    IDM_NORMAL
+        MENUITEM "全曲リピート(&R)",                  IDM_REPEAT
+        MENUITEM "１曲リピート(&U)",                  IDM_SINGLE
+        MENUITEM "ランダム(&R)",                    IDM_RANDOM
+    END
+    POPUP "表示(&V)"
+    BEGIN
+        MENUITEM "常に手前に表示(&T)",                 IDM_TOPMOST
+        MENUITEM SEPARATOR
+        MENUITEM "設定(&C)...",                   IDM_CONFIG
+        MENUITEM "プラグイン(&P)...",                IDM_PLUGIN
+        MENUITEM SEPARATOR
+        MENUITEM "再生情報表示(&D)...",               IDM_PLAYINFO
+    END
+    POPUP "ヘルプ(&H)"
+    BEGIN
+        MENUITEM "説明書表示(&M)...",                IDM_MANUAL
+        MENUITEM SEPARATOR
+        MENUITEM "Lunaについて(&A)...",             IDM_ABOUT
+    END
+END
+
+IDR_TRAYMENU MENU 
+BEGIN
+    POPUP "タスクトレイメニュー"
+    BEGIN
+        MENUITEM "再生／一時停止",                     IDM_PLAY
+        MENUITEM "停止",                          IDM_STOP
+        MENUITEM "前へ",                          IDM_PREV
+        MENUITEM "次へ",                          IDM_NEXT
+        MENUITEM SEPARATOR
+        MENUITEM "終了",                          IDM_EXIT
+    END
+END
+
+#endif    // 日本語 resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
